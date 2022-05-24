@@ -23,7 +23,7 @@ registroJ = archivoJug.readlines()
 for a in registroJ:
     
     nombre = a.split(";")[3]
-    dorsal = a.split(";")[2]
+    dorsal = int(a.split(";")[2])
     posicion = a.split(";")[1]
     cl = session.query(Club).filter_by(nombre= a.split(";")[0]).one()
     j = Jugador(nombre= nombre, dorsal= dorsal,
